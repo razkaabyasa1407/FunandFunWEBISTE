@@ -1,0 +1,86 @@
+html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+* {
+      box-sizing: border-box;
+    }
+  
+  .hero-section {
+    background-image: url(IMAGES/Background\ category.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px;
+    background: transparent;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+  }
+  
+  .logo img {
+    width: 70px;
+    height: 70px;
+    border-radius: 200px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover,
+  .nav-links a.active {
+    font-weight: 600;
+    color: #FFD700;
+  }
+  
+  .hero-text {
+    padding: 0 50px 60px;
+    max-width: 600px;
+  }
+  
+  .hero-text h1 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background: #FFD700;
+    color: #b11227;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  
+  .cta-button:hover {
+    background: #ffcc00;
+  }

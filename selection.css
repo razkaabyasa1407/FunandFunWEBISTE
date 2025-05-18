@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+    padding: 20px;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  nav a.active {
+    color: #f9cc00;
+  }
+
+  h2.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: red;
+    margin: 40px 20px;
+  }
+
+  .package {
+    max-width: 900px;
+    margin: 20px auto;
+    position: relative;
+  }
+
+  .package img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .package-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+
+  .package-title button {
+    margin-top: 10px;
+    background-color: #f9cc00;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  footer {
+    background-color: #f3f3f3;
+    padding: 30px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .footer-section {
+    flex: 1 1 250px;
+    margin: 10px;
+  }
+
+  .footer-section h4 {
+    color: red;
+    margin-bottom: 10px;
+  }
+
+  .footer-section a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .logo {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: red;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .package-title {
+      font-size: 1.5rem;
+    }
+
+    footer {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .footer-section {
+      margin-bottom: 20px;
+    }
+  }
