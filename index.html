@@ -5,96 +5,205 @@
      <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
      <title>Fun & Fun</title>
      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&amp;display=swap" rel="stylesheet"/>
      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
-     <link href="styles.css" rel="stylesheet"/>
+     <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
      <script src="https://cdn.tailwindcss.com"></script>
+       <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+    }
+  </style>
     </head>
     <body>
-     <!-- Header Section -->
-        <header class="header-bg">
-          <nav class="d-flex justify-content-between align-items-center px-3 py-3 nav-custom a" style="width: auto; height: auto; margin:0 auto; font-weight: 500;">
-            <div class="d-flex align-items-center">
-              <img src="IMAGES/LOGO 2.png" alt="Fun & Fun logo, circular shape with stylized F letters" width="52" height="55" href="index.html"/>
-            </div>
-            <div>
-              <a class="hover:text-yellow-400 transition-colors" href="index.html">Home</a>
-              <a class="hover:text-yellow-400 transition-colors" href="category.html">Package</a> 
-              <a class="hover:text-yellow-400 transition-colors" href="contactus.html">Contact Us</a>
-            </div>
-          </nav>
-<div class="header-overlay d-flex flex-column justify-content-center">
-  <div class="header-content text-white">
-    <img src="IMAGES/LOGO 1.png">
-    <br>
-    <h1>The best time to travel is now !</h1>
-    <a href="category.html" class="btn-yellow inline-block text-[#b3001b]">See Packages</a>
+<!-- Header Section -->
+<header class="header-bg sticky top-0 z-50">
+  <nav class="flex items-center justify-between px-6 py-4 bg-white shadow-md">
+    <!-- Logo + Brand Name -->
+    <div class="flex items-center space-x-3">
+      <a href="index.html">
+        <img src="IMAGES/LOGO 3.png" alt="Fun & Fun logo" class="w-10 h-10" />
+      </a>
+      <span class="text-lg font-bold text-gray-800">Fun & Fun </span> 
+    </div>
+
+    <!-- Desktop Nav Links -->
+    <div class="hidden md:flex space-x-6 font-medium text-gray-800">
+      <a href="index.html" class="hover:text-yellow-500 transition-colors">Home</a>
+      <a href="category.html" class="hover:text-yellow-500 transition-colors">Package</a>
+      <a href="contactus.html" class="hover:text-yellow-500 transition-colors">Contact Us</a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Links -->
+  <div id="mobile-menu" class="hidden md:hidden flex flex-col px-6 py-4 space-y-2 bg-white text-gray-800 font-medium shadow-md">
+    <a href="index.html" class="hover:text-yellow-500">Home</a>
+    <a href="category.html" class="hover:text-yellow-500">Package</a>
+    <a href="contactus.html" class="hover:text-yellow-500">Contact Us</a>
   </div>
-</div>
-        </header>
-      
+</header>
+
+<!--Script JS Mobile-->
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  toggleBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+<!-- Hero Content (Moved OUTSIDE header) -->
+<section class="header-overlay flex flex-col justify-center items-center text-center text-white py-16 bg-cover bg-center" style="background-image: url('IMAGES/home\ backgriund2.png');">
+  <img src="IMAGES/LOGO 1.png" alt="Main Logo" class="mb-4">
+  <h1 class="text-3xl md:text-4xl font-bold mb-4">The best time to travel is now!</h1>
+  <a href="category.html" class="btn-yellow text-[#b3001b] bg-yellow-300 hover:bg-yellow-400 px-6 py-2 rounded-full font-semibold transition-colors">
+    See Packages
+  </a>
+</section>
+
         <!-- About Us -->
-        <section class="about-section">
-          <div class="about-text">
-            <h2>About Us</h2>
-            <p>PT NURINDAH MASROOR BERKAH ABADI or known as the FUN &amp; FUN is a travel agency that is committed to providing unforgettable travel experiences to customers.</p>
-            <div class="feature">
-              <div class="feature-icon"><i class="fas fa-check"></i></div>
-              <div class="feature-text">
-                <h3>Trusted Expertise</h3>
-                <p>With over 30 years of experience in the travel industry, our team truly understands customer needs and expectations for tour packages.</p>
-              </div>
-            </div>
-            <div class="feature">
-              <div class="feature-icon"><i class="fas fa-thumbs-up"></i></div>
-              <div class="feature-text">
-                <h3>Quality-First Service</h3>
-                <p>We prioritize safe, comfortable, and high-quality services in every tour package we offer.</p>
-              </div>
-            </div>
-            <div class="feature">
-              <div class="feature-icon"><i class="fas fa-plane"></i></div>
-              <div class="feature-text">
-                <h3>Flexible Solutions for All</h3>
-                <p>Serving both B2B and B2C clients, we provide customizable tour packages to suit a wide range of travel preferences.</p>
-              </div>
+<section id="about" class="bg-white py-16 font-nunito">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+    <!-- Text and Icons -->
+    <div>
+      <h2 class="text-3xl font-extrabold text-red-600 mb-6">About Us</h2>
+      <p class="text-gray-700 mb-8 leading-relaxed">
+        PT NURINDAH MASROOR BERKAH ABADI or known as the FUN & FUN is a travel agency that is committed to providing unforgettable travel experiences to customers.
+      </p>
+
+      <div class="space-y-6">
+        <!-- Point 1 -->
+        <div class="flex items-start gap-4">
+          <!-- Icon Box -->
+          <div class="min-w-10">
+            <div class="bg-yellow-100 text-yellow-500 p-3 rounded-full flex items-center justify-center text-xl">
+              <i class="fas fa-shield-alt"></i>
             </div>
           </div>
-          <div class="about-image">
-            <img src="https://storage.googleapis.com/a1aa/image/168df585-fe95-4402-514e-f8e8a7460c58.jpg" alt="Airport waiting area with chairs and a plane taking off at sunset visible through large windows" />
+          <!-- Text -->
+          <div>
+            <h4 class="font-bold text-red-600 mb-1">Trusted Expertise</h4>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              With over 30 years of experience in the travel industry, our team truly understands customer needs and expectations for tour packages.
+            </p>
           </div>
-        </section>
-      
+        </div>
+
+        <!-- Point 2 -->
+        <div class="flex items-start gap-4">
+          <!-- Icon Box -->
+          <div class="min-w-10">
+            <div class="bg-yellow-100 text-yellow-500 p-3 rounded-full flex items-center justify-center text-xl">
+              <i class="fas fa-thumbs-up"></i>
+            </div>
+          </div>
+          <!-- Text -->
+          <div>
+            <h4 class="font-bold text-red-600 mb-1">Quality-First Service</h4>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              We prioritize safe, comfortable, and high-quality services in every tour package we offer.
+            </p>
+          </div>
+        </div>
+
+        <!-- Point 3 -->
+        <div class="flex items-start gap-4">
+          <!-- Icon Box -->
+          <div class="min-w-10">
+            <div class="bg-yellow-100 text-yellow-500 p-3 rounded-full flex items-center justify-center text-xl">
+              <i class="fas fa-plane"></i>
+            </div>
+          </div>
+          <!-- Text -->
+          <div>
+            <h4 class="font-bold text-red-600 mb-1">Flexible Solutions for All</h4>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Serving both B2B and B2C clients, we provide customizable tour packages to suit a wide range of travel preferences.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Image -->
+    <div>
+      <img src="https://storage.googleapis.com/a1aa/image/168df585-fe95-4402-514e-f8e8a7460c58.jpg" alt="Airport waiting area with chairs and a plane taking off at sunset visible through large windows" />    
+    </div>
+  </div>
+</section>
+
         <!-- Our Service -->
-        <section class="service-section">
-          <h2>Our Service</h2>
-          <p>We provide services both for business to customer and business to business</p>
-          <div class="service-cards">
-            <div class="service-card">
-              <img src="IMAGES/Domestic.png" alt="Colorful tree light installation at night with pink and purple hues" />
-              <h3>Domestic and International Tour Packages</h3>
-            </div>
-            <div class="service-card">
-              <img src="IMAGES/Group.png" alt="Group of people with raised hands celebrating in front of snowy mountain landscape" />
-              <h3>Group Tour (Tour Package/Land Arrangement)</h3>
-            </div>
-            <div class="service-card">
-              <img src="IMAGES/individual.png" alt="Two hikers walking on a mountain trail with backpacks and cloudy sky" />
-              <h3>Individual Tour (Private, SIC, Customized Tour)</h3>
-            </div>
-            <div class="service-card">
-              <img src="IMAGES/umroh.png" alt="Kaaba in Mecca surrounded by pilgrims during daytime with blue sky" />
-              <h3>Halal Tour and Pre/Post Umroh Tour</h3>
-            </div>
-            <div class="service-card">
-              <img src="IMAGES/MICE.png" alt="Two businessmen with suitcases talking at airport terminal with airplane visible outside window" />
-              <h3>MICE (Meetings, Incentives, Conventions, and Exhibitions)</h3>
-            </div>
-            <div class="service-card">
-              <img src="IMAGES/Consultant.png" alt="Travel consulting meeting with two women, one wearing a hat, discussing on a tablet" />
-              <h3>Traveling Consulting Services and VIP Arrangement</h3>
-            </div>
-          </div>
+<section id="service" class="bg-white py-16 font-nunito">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h2 class="text-2xl md:text-3xl font-extrabold text-red-600 mb-6">Our Service</h2>
+    <p class="text-gray-600 max-w-2xl mx-auto mb-10">
+      We provide services both for Business to Customer & Business to Business
+    </p>
+
+    <!-- Card Grid -->
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Card 1 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+        <img src="IMAGES/Domestic.png" alt="Halal Tour" class="w-full h-40 object-cover">
+        <div class="p-4 text-center">
+          <h3 class="text-sm font-semibold text-red-600">Domestic and International Tour Packages</h3>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+        <img src="IMAGES/Group.png" alt="MICE" class="w-full h-40 object-cover">
+        <div class="p-4 text-center">
+          <h3 class="text-sm font-semibold text-red-600">Group Tour (Tour Package/Land Arrangement)</h3>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+        <img src="IMAGES/individual.png" alt="Consulting" class="w-full h-40 object-cover">
+        <div class="p-4 text-center">
+          <h3 class="text-sm font-semibold text-red-600">Individual Tour (Private, SIC, Customized Tour)</h3>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+        <img src="IMAGES/umroh.png" alt="Card 4" class="w-full h-40 object-cover">
+        <div class="p-4 text-center">
+          <h3 class="text-sm font-semibold text-red-600">Halal Tour and Pre/Post Umroh Tour</h3>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+        <img src="IMAGES/MICE.png" alt="Card 5" class="w-full h-40 object-cover">
+        <div class="p-4 text-center">
+          <h3 class="text-sm font-semibold text-red-600">MICE (Meetings, Incentives, Conventions, and Exhibitions)</h3>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+        <img src="IMAGES/Consultant.png" alt="Card 6" class="w-full h-40 object-cover">
+        <div class="p-4 text-center">
+          <h3 class="text-sm font-semibold text-red-600">Traveling Consulting Services and VIP Arrangement</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
           <!--Discover the world section-->
           <section class="relative discover-section h-[500px] sm:h-[600px]">
           <!-- Background Image -->
@@ -106,47 +215,37 @@
           <p class="text-white text-lg sm:text-xl max-w-3xl mt-3 leading-relaxed">Because for us, your trip is our top priority — every detail is crafted with care, so you can travel with confidence and peace of mind.</p>
           </div>
           </section>
-        <!--Card Visi,Misi dan Legalitas-->
-        <section class="max-w-7xl mx-auto px-4 py-10">
-          <h2 class="text-2xl font-extrabold text-[#be0a23] mb-8 text-center">
-           Our Vision, Mission, and Legality
-          </h2>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-           <div class="border border-[#be0a23] rounded-lg p-6 flex flex-col items-center">
-            <img alt="Icon of an eye with red details representing vision" class="mb-4" height="60" src="https://storage.googleapis.com/a1aa/image/1aa7f656-17b7-4ef9-551f-7ad7f921e8ac.jpg" width="80"/>
-            <h3 class="text-[#be0a23] font-extrabold mb-2 text-lg">
-             Vision
-            </h3>
-            <p class="text-sm max-w-xs mx-auto leading-relaxed text-justify">
-             To be the best and foremost travel agency that can connect every customer with extraordinary experiences around the world by 
-             providing good quality processes and services, and leaving a good
-             impression.
-            </p>
-           </div>
-           <div class="border border-[#be0a23] rounded-lg p-6 flex flex-col items-center">
-            <img alt="Icon of a target with a red arrow representing mission" class="mb-4" height="60" src="https://storage.googleapis.com/a1aa/image/5256e40b-437c-462f-5221-c8d7e6751322.jpg" width="80"/>
-            <h3 class="text-[#be0a23] font-extrabold mb-2 text-lg">
-             Mission
-            </h3>
-            <p class="text-sm max-w-xs mx-auto leading-relaxed text-justify">
-             To provide high-quality travel services with a focus on customer
-                 satisfaction through a variety of tour package options and
-                 professional service.
-            </p>
-           </div>
-           <div class="border border-[#be0a23] rounded-lg p-6 flex flex-col items-center">
-            <img alt="Icon of legal scales outlined in red representing legality" class="mb-4" height="60" src="https://storage.googleapis.com/a1aa/image/9296cf74-1675-470c-956c-793f302b130a.jpg" width="80"/>
-            <h3 class="text-[#be0a23] font-extrabold mb-2 text-lg">
-             Legality
-            </h3>
-            <p class="text-sm max-w-xs mx-auto leading-relaxed text-justify">
-             PT NURINDAH MASROOR BERKAH ABADI
-             <br/>
-             NIB (Business Identification Number) : 2808230148581
-            </p>
-           </div>
-          </div>
-         </section>
+
+  <!-- Vision & Mission -->
+<!-- Vision & Mission -->
+<section class="py-12 max-w-6xl mx-auto px-6">
+  <h2 class="text-2xl font-bold text-red-600 text-center mb-10">Our Vision, Mission, and Legality</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+    
+    <!-- Vision Box -->
+    <div class="border-2 border-red-500 rounded-lg p-6 shadow-md">
+      <div class="text-4xl mb-4">👁</div>
+      <h3 class="font-bold text-xl mb-2 text-red-600">Vision</h3>
+      <p class="text-justify">To be the best and foremost travel agency that can connect every customer with extraordinary experiences around the world by providing good quality processes and services, and leaving a good impression.</p>
+    </div>
+    
+    <!-- Mission Box -->
+    <div class="border-2 border-red-500 rounded-lg p-6 shadow-md">
+      <div class="text-4xl mb-4">🎯</div>
+      <h3 class="font-bold text-xl mb-2 text-red-600">Mission</h3>
+      <p class="text-justify">To provide high-quality travel services with a focus on customer satisfaction through a variety of tour package options and professional service.</p>
+    </div>
+    
+    <!-- Legality Box -->
+    <div class="border-2 border-red-500 rounded-lg p-6 shadow-md">
+      <div class="text-4xl mb-4">⚖️</div>
+      <h3 class="font-bold text-xl mb-2 text-red-600">Legality</h3>
+      <p class="text-justify">PT NURINDAH MASROOR BERKAH ABADI NIB (Business Identification Number) : 2808230148581</p>
+    </div>
+  </div>
+</section>
+
+<!--Package Selection-->
          <section class="max-w-4xl mx-auto px-4 mb-10">
           <h2 class="text-2xl font-extrabold text-[#be0a23] mb-2 text-center">
            Packages
@@ -163,21 +262,18 @@
               <img src="IMAGES/Japan.jpg" alt="Asia" class="carousel-image w-full h-full object-cover" />
               <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white">
                 <h3 class="text-3xl font-extrabold mb-2 uppercase">ASIA</h3>
-                <button class="bg-yellow-400 text-[#be0a23] font-extrabold rounded-full px-5 py-1 text-sm hover:bg-yellow-300 transition">See Packages</button>
               </div>
             </div>
             <div class="carousel-slide hidden">
               <img src="IMAGES/Europe.jpg" alt="Europe" class="carousel-image w-full h-full object-cover" />
               <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white">
                 <h3 class="text-3xl font-extrabold mb-2 uppercase">EUROPE</h3>
-                <button class="bg-yellow-400 text-[#be0a23] font-extrabold rounded-full px-5 py-1 text-sm hover:bg-yellow-300 transition">See Packages</button>
               </div>
             </div>
             <div class="carousel-slide hidden">
               <img src="IMAGES/Africa.jpg" alt="Africa" class="carousel-image w-full h-full object-cover" />
               <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white">
                 <h3 class="text-3xl font-extrabold mb-2 uppercase">AFRICA</h3>
-                <button class="bg-yellow-400 text-[#be0a23] font-extrabold rounded-full px-5 py-1 text-sm hover:bg-yellow-300 transition">See Packages</button>
               </div>
             </div>
         
@@ -242,7 +338,7 @@
 
         
         <!--Footer Section-->
-<footer class="bg-gray-300 text-black py-10">
+<footer class="bg-gray-300 text-black py-10 mt-12">
   <div class="container mx-auto flex flex-wrap justify-between items-start gap-10 px-4">
 
     <!-- Logo & Alamat -->
@@ -265,10 +361,9 @@
     <div class="w-full md:w-1/6">
       <h3 class="text-lg font-bold text-red-700 mb-2">Links:</h3>
       <ul class="space-y-3 text-sm">
-        <li><a href="#" class="hover:underline text-[#b3001b]">Home</a></li>
-        <li><a href="#" class="hover:underline text-[#b3001b]">Package</a></li>
-        <li><a href="#" class="hover:underline text-[#b3001b]">Our Service</a></li>
-        <li><a href="#" class="hover:underline text-[#b3001b]">Support</a></li>
+        <li><a href="index.html" class="hover:underline text-[#b3001b]">Home</a></li>
+        <li><a href="category.html" class="hover:underline text-[#b3001b]">Package</a></li>
+        <li><a href="contactus.html" class="hover:underline text-[#b3001b]">Support</a></li>
       </ul>
     </div>
 

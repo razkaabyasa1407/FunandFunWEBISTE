@@ -4,17 +4,9 @@ body {
 
   body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Nunito', sans-serif;
     background-color: white;
     color: black;
-  }
-  /* Header background image */
-  .header-bg {
-    position: relative;
-    background: url('IMAGES/home\ backgriund2.png') no-repeat center center;
-    background-size: cover;
-    height: 500px;
-    color: white;
   }
   /* Discover Section */
     .discover-bg {
