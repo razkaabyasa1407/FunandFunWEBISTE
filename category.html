@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&amp;display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-
   <style>
     html, body {
       margin: 0;
@@ -14,6 +14,7 @@
     }
     * {
       box-sizing: border-box;
+      font-family: 'Nunito', sans-serif;
     }
   </style>
 
@@ -22,23 +23,58 @@
 
 <body class="flex flex-col min-h-screen">
 
-  <!-- Header -->
-  <header class="relative">
-    <img class="w-full h-[450px] object-cover" src="IMAGES/Background category.jpg" alt="Header background"/>
-    <nav class="absolute top-6 right-6 flex space-x-8 text-white text-base font-medium">
-      <a href="index.html" class="hover:text-yellow-400">Home</a>
-      <a href="category.html" class="hover:text-yellow-400">Package</a>
-      <a href="contactus.html" class="hover:text-yellow-400">Contact Us</a>
-    </nav>
-    <div class="absolute top-28 left-10 text-white max-w-lg font-bold">
-      <div class="flex items-center space-x-3 mb-3">
-        <img src="IMAGES/LOGO 1.png" alt="Fun & Fun Logo" class="h-auto w-auto"/>
-      </div>
-      <h1 class="text-3xl sm:text-4xl md:text-5xl leading-tight max-w-md">
-        Find your Vacation Package
-      </h1>
+<!-- Header Section -->
+<header class="header-bg sticky top-0 z-50">
+  <nav class="flex items-center justify-between px-6 py-4 bg-white shadow-md">
+    <!-- Logo + Brand Name -->
+    <div class="flex items-center space-x-3">
+      <a href="index.html">
+        <img src="IMAGES/LOGO 3.png" alt="Fun & Fun logo" class="w-10 h-10" />
+      </a>
+      <span class="text-lg font-bold text-gray-800">Fun & Fun </span> 
     </div>
-  </header>
+
+    <!-- Desktop Nav Links -->
+    <div class="hidden md:flex space-x-6 font-medium text-gray-800">
+      <a href="index.html" class="hover:text-yellow-500 transition-colors">Home</a>
+      <a href="category.html" class="hover:text-yellow-500 transition-colors">Package</a>
+      <a href="contactus.html" class="hover:text-yellow-500 transition-colors">Contact Us</a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Links -->
+  <div id="mobile-menu" class="hidden md:hidden flex flex-col px-6 py-4 space-y-2 bg-white text-gray-800 font-medium shadow-md">
+    <a href="index.html" class="hover:text-yellow-500">Home</a>
+    <a href="category.html" class="hover:text-yellow-500">Package</a>
+    <a href="contactus.html" class="hover:text-yellow-500">Contact Us</a>
+  </div>
+</header>
+
+<!--Script JS Mobile-->
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  toggleBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+<!--Hero Section-->
+<section class="header-overlay flex flex-col justify-center items-center text-center text-white py-16 bg-cover bg-center" style="background-image: url('IMAGES/home\ backgriund2.png');">
+  <img src="IMAGES/LOGO 1.png" alt="Main Logo" class="mb-4">
+  <h1 class="text-3xl md:text-4xl font-bold mb-4">Find your vacation package</h1>
+</section>
 
   <!-- Main -->
   <main class="flex-grow py-16 text-center">
