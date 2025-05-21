@@ -6,23 +6,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&amp;display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-    * {
-      box-sizing: border-box;
+  <style> 
+  body {
       font-family: 'Nunito', sans-serif;
     }
   </style>
-
-  <title>Packages Category</title>
 </head>
-
-<body class="flex flex-col min-h-screen">
-
+<body class="min-h-screen flex flex-col m-0 p-0">
 <!-- Header Section -->
 <!-- Header -->
 <header class="fixed top-0 left-0 w-full z-50 font-nunito">
@@ -105,11 +95,20 @@
   });
 </script>
 
-<!--Hero Section-->
-<section class="header-overlay flex flex-col justify-center items-center text-center text-white py-16 bg-cover bg-center" style="background-image: url('IMAGES/category\ background.png');">
-  <img src="IMAGES/LOGO 1.png" alt="Main Logo" class="mb-4">
-  <h1 class="text-3xl md:text-4xl font-bold mb-4">Find your vacation package</h1>
-</section>
+  <!-- Hero Section -->
+  <section class="relative h-screen bg-cover bg-center" style="background-image: url('IMAGES/category\ background.png')">
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    
+    <!-- Hero Content -->
+    <div class="absolute bottom-24 left-8 text-white z-10">
+      <div class="flex items-center mb-4">
+        <img src="IMAGES/LOGO 1.png" alt="Fun & Fun" class="w-auto h-auto mr-2">
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold">
+        Find your vacation package
+      </h1>
+    </div>
+  </section>
 
   <!-- Main -->
   <main class="flex-grow py-16 text-center">
